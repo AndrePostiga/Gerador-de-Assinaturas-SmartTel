@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gerador de assinaturas SmartTel</title>
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="favicon.png" rel="shortcut icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  </head>
+
+  <body>
+      
+
+    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+
+      <div class="demo-ribbon"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+
+          <div ng-show="$ctrl.model.name && $ctrl.model.email" class="demo-card-wide mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text"><strong>Gerador de assinaturas Como Utilizar</strong></h2>
+              </div>
+              <br/>
+
+              <ul>
+                <li>
+                  Preencha os dados com suas informações
+                  <ul>
+                    <li>PESSOAL, ONDE VOCES TEM QUE COLOCAR O LINK DO FACEBOOK, É O LINK DO SEU PERFIL, NÃO O LINK DO SITE DO FACEBOOK. EXEMPLO CERTO: facebook.com/brunorodriguesp COM O LINKEDIN É A MESMA COISA!</li>
+                    <li>Quem não tem linkedin, ou não quer colocar o facebook, pode colocar os links dos perfis da empresa.</li>
+                    <li>O FORMATO CORRETO PARA O TELEFONE É (21) 999999999</li>
+                    <li>O FORMATO CORRETO PARA O DEPARTAMENTO É "Departamendo de SeuDepartamento"</li>
+                  </ul>
+                </li>
+
+                <li>Vá em Configurações, do lado superior direirto da tela. Vá em Identidades, clique no seu nome.</li>
+                <li>Na parte "Assinatura Eletrônica" clique na caixa Assinatura em HTML. Aparecerão algumas opções em cima da caixa de texto. Clique em HTML.</li>
+                <li>Apague todo o texto que tiver lá, e cole o código gerado no rodapé deste applet.</li>                
+              </ul>
+
+              <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text"><strong>Qualquer dúvida, entre em contato com o TI, GP ou Qualidade</strong></h2>
+              </div>
+
+            </div>
+
+            <br/>
+
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="name" type="text">
+                <label class="mdl-textfield__label" for="name">Nome</label>
+              </div>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="cellphone" type="text" mask="(99) 99999?-9999" mask-validate="false" >
+                <label class="mdl-textfield__label" for="cellphone">Celular</label>
+              </div>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="cargo" type="text" >
+                <label class="mdl-textfield__label" for="cargo">Cargo</label>
+              </div>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="departamento" type="text" >
+                <label class="mdl-textfield__label" for="departamento">Departamento</label>
+              </div>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="email" type="text" >
+                <label class="mdl-textfield__label" for="email">Email</label>
+              </div>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="facebook" type="text" >
+                <label class="mdl-textfield__label" for="facebook">Link Facebook</label>
+              </div>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="linkedin" type="text" >
+                <label class="mdl-textfield__label" for="linkedin">Link Linkedin</label>
+              </div>    
+              <br/>         
+              <button id="refresh" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect copyButton" >
+                Atualizar
+              </button>
+              
+            </form>
+
+
+
+            <br/>
+
+            <div ng-show="$ctrl.model.name && $ctrl.model.email" class="demo-card-wide mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Sua Assinatura</h2>
+              </div>
+
+
+              <div class="mdl-card__supporting-text signature-container" id="signature-container">
+                <div dir="ltr">
+                  <br style="font-size:12.8px">
+
+
+                  <div id="assinaturaEmail" class="assinatura">
+                      
+                        <table style="height: 135px;" width="674">
+                          <tbody>
+                          <tr>
+                          <td style="padding: 0 0 0 0;" valign="middle"><a href="https://www.smartteljr.com.br"><img src="https://img.newoldstamp.com/f/000/016/u436.png?586bc031719e9"/></a></td>
+                          <td style="font-size: 80%; font-family: Arial; padding: 0 8px;" valign="top"><br/>
+                          <div style="color: #787878; font-size: 1.1em;"><span style="font-size: 8pt;">Atenciosamente,</span></div>
+                          <div style="color: #787878; font-size: 1.4em;"><span style="font-size: 12pt;"><strong><span class="nome">Nome</span></strong></span></div>
+                          <div style="color: #787878; font-size: 1.4em;"><span style="color: #787878;"><span class="cargo" style="color: #787878; font-size: 1.1em; font-weight: bold;">Cargo </span></span><span class="departamento" style="font-size: 8pt;">departamento </span></div>
+                          <div style="color: #787878; font-size: 1em;"><span style="font-size: 8pt;">SmartTel Jr. Consultoria e Projetos em Telecom</span></div>
+                          <div style="line-height: 0.4em; font-size: 0.4em;">&nbsp;</div>
+                          <div><span style="color: #ff8c00; font-size: 1em;">phone:&nbsp;</span><span style="color: #787878; font-size: 0.9em;">(21) 2629-5531</span></div>
+                          <div><span style="color: #ff8c00; font-size: 1em;">mobile:&nbsp;</span><span class="tel" style="color: #787878; font-size: 0.9em;">(21) 00000-0000</span></div>
+                          <div><span style="color: #ff8c00; font-size: 1em;">email:&nbsp;</span><a class="aEmail" style="color: #787878; text-decoration: none; font-size: 0.9em;" href=""><span class="email">seuEmail@smartteljr.com.br<</span></a></div>
+                          <div><span style="color: #ff8c00; font-size: 1em;">site:&nbsp;</span><span><a style="color: blue; font-size: 0.9em;" href="http://smartteljr.com.br/">smartteljr.com.br</a></span></div>
+                          </td>
+                          <td style="border-left: 3px solid; padding: 0 0 3px 6px; width: 42px; border-color: #ff8c00;" valign="middle"><span><a class="facebook" style="display: inline-block;" href=""><img src="https://img.newoldstamp.com/s/ico/square/24/origin/facebook.png" /></a><span style="display: block; width: 3px; height: 3px; color: white; font-size: 16px;">.</span><a class="linkedin" style="display: inline-block;" href=""><img src="https://img.newoldstamp.com/s/ico/square/24/origin/linkedin.png" /></a><span style="display: block; width: 3px; height: 3px; color: white; font-size: 16px;">.</span></span></td>
+                          </tr>
+                          </tbody>
+                          </table>
+                          <p>&nbsp;</p>
+                          <div style="line-height: 10px; font-size: 10px;">&nbsp;</div>
+                          <p>&nbsp;</p>
+                          <div>&nbsp;</div>
+                        </table>
+
+                  </div>
+                </div> 
+              </div>
+            </div>
+              
+            
+            <br/>
+            
+
+            <div ng-show="$ctrl.model.name && $ctrl.model.email" class="demo-card-wide mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Código Fonte</h2>
+              </div>
+              <br/>
+
+              <span class="assinaturaCode"></span>
+
+            </div>       
+
+          </div>
+        </div>
+      </main>
+    </div>
+
+
+
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+    <script src="script_smart.js"></script>
+
+
+  </body>
+</html>
